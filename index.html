@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Todd Miller Realty</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+    /* Typography Styles */
+    :root {
+      --font-hero-size: 90px;
+      --font-hero-line: 94px;
+      --font-h1-size: 45px;
+      --font-h1-line: 47px;
+      --font-h2-size: 32px;
+      --font-h2-line: 33px;
+      --font-h3-size: 23px;
+      --font-h3-line: 29px;
+      --font-body-size: 16px;
+      --font-body-line: 26px;
+      --font-sub-size: 14px;
+      --font-sub-line: 23px;
+    }
+
+    /* Color Palette */
+    :root {
+      --color-hero-bg: rgb(255, 255, 255);
+      --color-section-bg: rgb(246, 247, 249);
+      --color-inverse-section: rgb(5, 5, 48);
+      --color-blue-button: rgb(75, 182, 244);
+      --color-highlight-section: rgb(90, 93, 255);
+      --color-text-primary: #333;
+      --color-text-secondary: #4a5568;
+      --color-border: #ddd;
+    }
+
+    /* Base Styles */
+    body {
+      font-family: 'Manrope', sans-serif;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      color: var(--color-text-primary);
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Standard Header */
+    .site-header {
+      background: var(--color-inverse-section);
+      padding: 1rem 2rem;
+    }
+
+    .site-header nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .site-header nav a {
+      color: white;
+      text-decoration: none;
+      font-family: 'Manrope', sans-serif;
+      font-weight: 600;
+      margin-left: 1.5rem;
+    }
+
+    .site-header nav a:hover {
+      opacity: 0.8;
+    }
+
+    .site-header img {
+      max-height: 50px;
+    }
+
+    /* Standard Footer */
+    .site-footer {
+      background-color: var(--color-hero-bg);
+      padding: 2rem;
+      font-size: 14px;
+      color: var(--color-inverse-section);
+      border-top: 1px solid var(--color-border);
+      margin-top: 2rem;
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 2rem;
+      line-height: 1.3;
+    }
+
+    .footer-logo {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .footer-logo img {
+      height: 50px;
+    }
+
+    .footer-container > div:last-child {
+      display: flex;
+      flex: 2;
+      gap: 4rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-container > div:last-child > div {
+      min-width: 220px;
+    }
+
+    .footer-container a {
+      color: var(--color-blue-button);
+      text-decoration: none;
+    }
+
+    .footer-container a:hover {
+      text-decoration: underline;
+    }
+
+    /* Hero Section Layout */
+    .hero-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 4rem 2rem;
+      background-color: var(--color-hero-bg);
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      max-width: 50%;
+    }
+
+    .image-grid img {
+      width: 100%;
+      height: auto;
+      border-radius: 1rem;
+      object-fit: cover;
+    }
+
+    .hero-text {
+      max-width: 45%;
+    }
+
+    .hero-text h1 {
+      font-size: var(--font-h1-size);
+      line-height: var(--font-h1-line);
+      font-weight: 700;
+      color: var(--color-inverse-section);
+      text-transform: none;
+    }
+
+    .hero-text p {
+      font-size: var(--font-body-size);
+      line-height: var(--font-body-line);
+      color: var(--color-text-secondary);
+      margin-top: 1rem;
+    }
+
+    /* Standard Headings */
+    h1, h2, h3 {
+      color: var(--color-inverse-section);
+      font-family: 'Manrope', sans-serif;
+    }
+
+    h1 {
+      font-size: var(--font-h1-size);
+      line-height: var(--font-h1-line);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: var(--font-h2-size);
+      line-height: var(--font-h2-line);
+      font-weight: 600;
+      margin-bottom: 1rem;
+      margin-top: 2rem;
+    }
+
+    h3 {
+      font-size: var(--font-h3-size);
+      line-height: var(--font-h3-line);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Services Section */
+    .services-section {
+      background-color: var(--color-section-bg);
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .services-section h2 {
+      font-size: var(--font-h2-size);
+      line-height: var(--font-h2-line);
+      color: var(--color-inverse-section);
+      margin-bottom: 1rem;
+    }
+
+    .services-section .section-label {
+      font-size: var(--font-sub-size);
+      line-height: var(--font-sub-line);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #888;
+      margin-bottom: 0.5rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .service-card {
+      background-color: white;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      padding: 2rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .service-card .icon {
+      font-size: 2rem;
+      color: var(--color-blue-button);
+      margin-bottom: 1rem;
+    }
+
+    .service-card h3 {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--color-inverse-section);
+      margin-bottom: 0.5rem;
+    }
+
+    .service-card p {
+      font-size: 14px;
+      color: var(--color-text-secondary);
+    }
+
+    .service-card h4 {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--color-inverse-section);
+      margin-bottom: 0.25rem;
+    }
+
+    .service-card em {
+      font-size: 12px;
+      color: #666;
+    }
+
+    /* Contact Form Section */
+    .contact-section {
+      background-color: var(--color-hero-bg);
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .contact-section h2 {
+      font-size: var(--font-h2-size);
+      line-height: var(--font-h2-line);
+      color: var(--color-inverse-section);
+      margin-bottom: 2rem;
+    }
+
+    .contact-form {
+      max-width: 600px;
+      margin: 2rem auto 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-form label {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-inverse-section);
+      text-align: left;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 0.75rem 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+      font-family: inherit;
+      resize: vertical;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-form button {
+      background-color: var(--color-blue-button);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-size: 1rem;
+    }
+
+    .contact-form button:hover {
+      background-color: #60c1ff;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero-section {
+        flex-direction: column;
+        padding: 2rem 1rem;
+      }
+
+      .image-grid,
+      .hero-text {
+        max-width: 100%;
+      }
+
+      .image-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero-text h1 {
+        font-size: 36px;
+        line-height: 42px;
+      }
+
+      .hero-text p {
+        font-size: 14px;
+        line-height: 22px;
+      }
+
+      .site-header {
+        padding: 1rem;
+      }
+
+      .site-header nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .site-header nav > div:last-child {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+      }
+
+      .site-header nav a {
+        margin-left: 0;
+      }
+
+      .footer-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-container > div:last-child {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+    .image-grid img:nth-child(1) { height: 200px; }
+    .image-grid img:nth-child(2) { height: 250px; }
+    .image-grid img:nth-child(3) { height: 300px; }
+    .image-grid img:nth-child(4) { height: 180px; }
+    .image-grid img {
+      object-fit: cover;
+      width: 100%;
+      border-radius: 1rem;
+    }
+    .split-section {
+      background-color: #050530;
+      padding: 4rem 2rem;
+      color: white;
+    }
+    .split-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      align-items: start;
+    }
+    .split-card img {
+      width: 100%;
+      border-radius: 1rem;
+      margin-bottom: 1rem;
+    }
+    .split-card h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: white;
+    }
+    .split-card p {
+      font-size: 14px;
+      color: #ccc;
+      margin-bottom: 1rem;
+    }
+    .split-card .button {
+      background-color: #4bb6f4;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 0.75rem;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .split-card .button:hover {
+      background-color: #60c1ff;
+    }
+    .testimonial-section {
+      background-color: #edf2f7;
+      padding: 4rem 2rem;
+      font-family: 'Manrope', sans-serif;
+    }
+    .testimonial-card {
+      display: flex;
+      flex-direction: row;
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      max-width: 1200px;
+      margin: 0 auto 2rem;
+    }
+    .testimonial-card img {
+      width: 50%;
+      object-fit: cover;
+    }
+    .testimonial-content {
+      padding: 2rem;
+      flex: 1;
+    }
+    .testimonial-content p {
+      font-size: 16px;
+      color: #2d3748;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    .testimonial-content a {
+      color: #3182ce;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .profile-selectors {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .profile-card {
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      border-radius: 1rem;
+      background-color: #f7fafc;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .profile-card.active {
+      background-color: #4bb6f4;
+      color: white;
+    }
+    .profile-card img {
+      border-radius: 50%;
+      margin-right: 1rem;
+    }
+    .profile-card .info span:first-child {
+      font-weight: 600;
+      display: block;
+    }
+    .profile-card .info span:last-child {
+      font-size: 12px;
+      color: #718096;
+    }
+    .profile-card.active .info span:last-child {
+      color: white;
+    }
+</style>
+<meta content="Todd Miller Realty offers commercial and residential real estate services, including virtual offices, leasing, and property management in South Florida." name="description"/>
+<meta content="real estate, commercial real estate, virtual offices, property management, Hollywood FL, South Florida" name="keywords"/>
+<meta content="index, follow" name="robots"/>
+<meta content="Todd Miller Realty | Commercial &amp; Residential Real Estate" property="og:title"/>
+<meta content="Explore real estate services including virtual offices, leasing, and property management tailored to your business needs in Hollywood, FL." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://toddmillerrealty.com/index.html" property="og:url"/>
+<meta content="https://toddmillerrealty.com/images/social-preview.jpg" property="og:image"/>
+</head>
+<body>
+<header class="site-header">
+<nav>
+<div>
+<img alt="Todd Miller Realty" src="tm_logo.png" style="max-height: 50px;"/>
+</div>
+<div style="display: flex; gap: 1.5rem;">
+<a href="index.html">Home</a>
+<a href="about-us.html">About Us</a>
+<a href="services.html">Services</a>
+<a href="virtual-office.html">Virtual Offices</a>
+<a href="listings.html">Listings</a>
+<a href="forms.html">Forms</a>
+<a href="contact.html">Contact</a>
+</div>
+</nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero-section">
+<div class="image-grid">
+<img alt="Balcony" src="balcony.jpg"/>
+<img alt="Building" src="building.jpg"/>
+<img alt="Palm Trees" src="palm.jpg"/>
+<img alt="Parking" src="parking.jpg"/>
+</div>
+<div class="hero-text" style="text-align: center;">
+<img src="tm_logo_orig.png" alt="Todd Miller Realty Logo" style="max-height: 90px;" />
+<p>Flexible office rentals, leasing, property sales, and management—tailored for your business needs. Explore professional solutions in one place.</p>
+</div>
+</section>
+
+<!-- Services Section -->
+<section class="services-section">
+<div class="section-label">What We Offer</div>
+<h2>Commercial real estate, simplified</h2>
+
+<div class="services-grid">
+<a href="/virtual-office.html" class="service-card" style="text-decoration: none; color: inherit;">
+<div class="icon">📄</div>
+<h3>Virtual office solutions</h3>
+<p>Professional business addresses and mail handling for remote teams.</p>
+</a>
+<a href="/listings.html" class="service-card" style="text-decoration: none; color: inherit;">
+<div class="icon">✨</div>
+<h3>Commercial Real Estate Leasing</h3>
+<p>Offices and work spaces in key locations.</p>
+</a>
+<a href="/listings.html" class="service-card" style="text-decoration: none; color: inherit;">
+<div class="icon">💬</div>
+<h3>Commercial property sales</h3>
+<p>Guided property purchases from search to closing.</p>
+</a>
+<a href="/services.html" class="service-card" style="text-decoration: none; color: inherit;">
+<div class="icon">❄️</div>
+<h3>Property management</h3>
+<p>Full-service management for commercial properties.</p>
+</a>
+<a href="/services.html" class="service-card" style="text-decoration: none; color: inherit;">
+<div class="icon">❤️</div>
+<h3>Tenant placement</h3>
+<p>Efficient tenant sourcing and leasing support.</p>
+</a>
+</div>
+</section>
+
+<!-- Testimonial Section -->
+<section class="services-section">
+<h2>What Our Clients Say</h2>
+<div class="services-grid">
+<div class="service-card">
+<p>"We can always count on Todd and his team for prompt and reliable service whenever we need them."</p>
+<h4>Dr. Shahrad Mabourakh</h4>
+<p><em>Medical Director, West Broward Internal Medicine</em></p>
+</div>
+<div class="service-card">
+<p>"Their team made finding the right office space easy and stress-free."</p>
+<h4>Janelle Cruz</h4>
+<p><em>Founder, Cruz Legal Group</em></p>
+</div>
+<div class="service-card">
+<p>"Professional, responsive, and knowledgeable. We couldn't ask for more."</p>
+<h4>Marcus Lee</h4>
+<p><em>COO, Lee & Sons Manufacturing</em></p>
+</div>
+<div class="service-card">
+<p>"From start to finish, the process was seamless and transparent."</p>
+<h4>Priya Natarajan</h4>
+<p><em>Owner, Natarajan Wellness Spa</em></p>
+</div>
+<div class="service-card">
+<p>"They understood our business needs and helped us scale into a better space."</p>
+<h4>Anthony Delgado</h4>
+<p><em>CEO, Delgado Tech Solutions</em></p>
+</div>
+<div class="service-card">
+<p>"Highly recommend for anyone needing flexible, professional office space."</p>
+<h4>Samantha Brooks</h4>
+<p><em>Creative Director, Brooks Marketing Co.</em></p>
+</div>
+</div>
+</section>
+
+<!-- Contact Form -->
+<section class="contact-section" id="contact">
+<h2>Get in Touch</h2>
+<form class="contact-form">
+<label for="name">Name</label>
+<input id="name" name="name" type="text"/>
+<label for="email">Email Address</label>
+<input id="email" name="email" type="email"/>
+<label for="message">Message</label>
+<textarea id="message" name="message" placeholder="Example Text" rows="5"></textarea>
+<button type="submit">Submit</button>
+</form>
+</section>
+
+<footer class="site-footer">
+<div class="footer-container">
+<div class="footer-logo">
+<img alt="Logo Icon" src="tm_logo_orig.png" style="height: 50px;"/>
+</div>
+<div>
+<div>
+<p><strong>Hours:</strong> Mon – Fri: 9am – 5pm</p>
+<p><strong>Email:</strong> <a href="mailto:toddmillermanagement@yahoo.com">toddmillermanagement@yahoo.com</a></p>
+<p><strong>Address:</strong> 7777 Davie Rd. Ext, Suite 302B, Hollywood, FL 33024</p>
+</div>
+<div>
+<p><strong>Phone:</strong> (954) 437-5001</p>
+<p><strong>Fax:</strong> (954) 437-5099</p>
+<p><strong>Toll Free:</strong> (888) 260-5747</p>
+</div>
+</div>
+</div>
+</footer>
+</body>
+</html>
