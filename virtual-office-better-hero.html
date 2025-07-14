@@ -241,57 +241,63 @@
       color: white;
     }
 
-    /* Hero Section Layout - Similar to index.html but reversed */
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .site-header {
+        padding: 1rem;
+      }
+
+      .site-header nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .site-header nav > div:last-child {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+      }
+
+      .site-header nav a {
+        margin-left: 0;
+      }
+
+      .footer-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-container > div:last-child {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
     .hero-virtual {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
+      background-color: #ffffff;
       padding: 4rem 2rem;
-      background-color: var(--color-hero-bg);
+      text-align: center;
     }
-
-    .hero-text-virtual {
-      max-width: 45%;
-    }
-
-    .hero-text-virtual h1 {
-      font-size: var(--font-h1-size);
-      line-height: var(--font-h1-line);
+    
+    .hero-virtual h1 {
+      font-size: 45px;
+      line-height: 47px;
       font-weight: 700;
-      color: var(--color-inverse-section);
+      color: #050530;
       margin-bottom: 1rem;
     }
-
-    .hero-text-virtual p {
-      font-size: var(--font-body-size);
-      line-height: var(--font-body-line);
-      color: var(--color-text-secondary);
-      margin-bottom: 2rem;
+    
+    .hero-virtual p {
+      font-size: 16px;
+      line-height: 26px;
+      color: #4a5568;
+      max-width: 800px;
+      margin: 0 auto 2rem;
     }
-
-    .image-grid-virtual {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
-      max-width: 50%;
-    }
-
-    .image-grid-virtual img {
-      width: 100%;
-      height: auto;
-      border-radius: 1rem;
-      object-fit: cover;
-    }
-
-    .image-grid-virtual img:nth-child(1) { height: 200px; }
-    .image-grid-virtual img:nth-child(2) { height: 250px; }
-    .image-grid-virtual img:nth-child(3) { height: 300px; }
-    .image-grid-virtual img:nth-child(4) { height: 180px; }
-
+    
     .cta-buttons {
       display: flex;
-      justify-content: flex-start;
+      justify-content: center;
       gap: 1rem;
       flex-wrap: wrap;
     }
@@ -442,56 +448,10 @@
       color: #4a5568;
     }
 
-    /* Responsive Design */
     @media (max-width: 768px) {
-      .hero-virtual {
-        flex-direction: column-reverse;
-        padding: 2rem 1rem;
-      }
-
-      .image-grid-virtual,
-      .hero-text-virtual {
-        max-width: 100%;
-      }
-
-      .image-grid-virtual {
-        grid-template-columns: 1fr 1fr;
-        margin-bottom: 2rem;
-      }
-
-      .hero-text-virtual h1 {
+      .hero-virtual h1 {
         font-size: 36px;
         line-height: 42px;
-      }
-
-      .site-header {
-        padding: 1rem;
-      }
-
-      .site-header nav {
-        flex-direction: column;
-        gap: 1rem;
-      }
-
-      .site-header nav > div:last-child {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-        justify-content: center;
-      }
-
-      .site-header nav a {
-        margin-left: 0;
-      }
-
-      .footer-container {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .footer-container > div:last-child {
-        flex-direction: column;
-        gap: 1rem;
       }
       
       .cta-buttons {
@@ -536,23 +496,21 @@
 </nav>
 </header>
 
-<section class="hero-virtual">
-<div class="hero-text-virtual">
-<h1>Virtual Office Services</h1>
-<p>
-At <strong>Todd Miller Realty</strong>, we provide <strong>comprehensive virtual office solutions</strong> designed for modern businesses. Get a prestigious business address, professional phone services, and essential office amenities without the overhead of traditional office space.
-</p>
-<div class="cta-buttons">
-<a class="button primary" href="#whats-included">View Services</a>
-<a class="button secondary" href="#get-in-touch">Contact Us</a>
-</div>
-</div>
-<div class="image-grid-virtual">
-<img alt="The Crossroads Corporate Center Sign" src="crossroads.jpg"/>
-<img alt="Professional Conference Room" src="office.jpg"/>
-<img alt="Office Building Exterior" src="7777-Davie-Rd-Ext.jpg"/>
-</div>
+
+<section class="hero-about" style="grid-template-columns: 1fr 2fr;">
+  <div class="images">
+    <img src="crossroads.jpg" alt="The Crossroads Corporate Center"/>
+  </div>
+  <div class="text">
+    <h1>Virtual Office Services</h1>
+    <p><strong>Todd Miller Realty</strong> offers comprehensive virtual office solutions designed for modern businesses. Get a prestigious business address, professional phone services, and essential office amenities without the overhead of traditional office space.</p>
+    <div class="cta-buttons" style="margin-top: 1rem;">
+      <a class="button primary" href="#whats-included">View Services</a>
+      <a class="button secondary" href="#get-in-touch">Contact Us</a>
+    </div>
+  </div>
 </section>
+
 
 <section class="dark-section" id="whats-included">
 <h2>What's Included</h2>
@@ -693,6 +651,7 @@ At <strong>Todd Miller Realty</strong>, we provide <strong>comprehensive virtual
 <details>
 <summary>How fast can I get started?</summary>
 <p>You can sign up online in minutes. We'll verify your ID, complete the USPS Form 1583, and activate your address the same day in most cases.</p>
+<p><a href="Virtual-Office-Signup-Package.pdf" style="color: #4bb6f4; font-weight: 600;">You can get started on your application right now!</a></p>
 </details>
 <details>
 <summary>What's the difference between you and national chains like Regus or iPostal1?</summary>
