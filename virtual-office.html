@@ -75,6 +75,209 @@
       max-height: 50px;
     }
 
+    /* Promotional Hero Section */
+    .promo-hero {
+      background: linear-gradient(135deg, #050530 0%, #1a1a5e 100%);
+      padding: 4rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .promo-hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 10px,
+          rgba(255, 255, 255, 0.03) 10px,
+          rgba(255, 255, 255, 0.03) 20px
+      );
+      pointer-events: none;
+    }
+
+    .promo-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .promo-content {
+      flex: 1;
+      color: white;
+    }
+
+    .compass-icon {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 1rem;
+      border: 3px solid #4bb6f4;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(75, 182, 244, 0.1);
+    }
+
+    .compass-icon::before {
+      content: '🧭';
+      font-size: 24px;
+    }
+
+    .company-name {
+      font-size: 18px;
+      font-weight: 600;
+      color: #4bb6f4;
+      margin-bottom: 0.5rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .service-title {
+      font-size: 24px;
+      font-weight: 400;
+      color: #ccc;
+      margin-bottom: 1.5rem;
+      letter-spacing: 1px;
+    }
+
+    .main-offer {
+      font-size: 52px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      line-height: 1.1;
+    }
+
+    .free-text {
+      color: #4bb6f4;
+      text-shadow: 0 0 20px rgba(75, 182, 244, 0.5);
+    }
+
+    .offer-details {
+      font-size: 20px;
+      font-weight: 600;
+      color: #e0e0e0;
+      margin-bottom: 1.5rem;
+      letter-spacing: 1px;
+    }
+
+    .promo-code-section {
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px dashed #4bb6f4;
+      border-radius: 12px;
+      padding: 1rem;
+      margin: 1.5rem 0;
+      backdrop-filter: blur(10px);
+      display: inline-block;
+    }
+
+    .promo-code-label {
+      font-size: 14px;
+      color: #ccc;
+      margin-bottom: 0.5rem;
+    }
+
+    .promo-code {
+      font-size: 20px;
+      font-weight: 700;
+      color: #4bb6f4;
+      letter-spacing: 3px;
+      font-family: 'Courier New', monospace;
+    }
+
+    .tagline {
+      font-size: 20px;
+      font-style: italic;
+      color: #fff;
+      margin: 1.5rem 0;
+      font-weight: 300;
+    }
+
+    .hero-cta-section {
+      margin-top: 2rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-cta-button {
+      background: #4bb6f4;
+      color: white;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 50px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      box-shadow: 0 8px 20px rgba(75, 182, 244, 0.3);
+    }
+
+    .hero-cta-button:hover {
+      background: #60c1ff;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 25px rgba(75, 182, 244, 0.4);
+    }
+
+    .hero-cta-button.secondary {
+      background: transparent;
+      border: 2px solid #4bb6f4;
+      color: #4bb6f4;
+    }
+
+    .hero-cta-button.secondary:hover {
+      background: #4bb6f4;
+      color: white;
+    }
+
+    .hero-images {
+      flex: 1;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      max-width: 400px;
+    }
+
+    .hero-images img {
+      width: 100%;
+      height: auto;
+      border-radius: 1rem;
+      object-fit: cover;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .hero-images img:hover {
+      transform: translateY(-5px);
+    }
+
+    .hero-images img:nth-child(1) { height: 180px; }
+    .hero-images img:nth-child(2) { height: 220px; }
+    .hero-images img:nth-child(3) { height: 260px; }
+    .hero-images img:nth-child(4) { height: 160px; }
+
+    /* Animation for the main offer */
+    @keyframes glow {
+      0%, 100% { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); }
+      50% { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 0 0 30px rgba(75, 182, 244, 0.3); }
+    }
+
+    .main-offer {
+      animation: glow 3s ease-in-out infinite;
+    }
+
     /* Standard Footer */
     .site-footer {
       background-color: var(--color-hero-bg);
@@ -129,13 +332,6 @@
       font-family: 'Manrope', sans-serif;
     }
 
-    h1 {
-      font-size: var(--font-h1-size);
-      line-height: var(--font-h1-line);
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
-
     h2 {
       font-size: var(--font-h2-size);
       line-height: var(--font-h2-line);
@@ -144,11 +340,74 @@
       margin-top: 2rem;
     }
 
-    h3 {
-      font-size: var(--font-h3-size);
-      line-height: var(--font-h3-line);
+    /* Dark Section */
+    .dark-section {
+      background-color: #050530;
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    
+    .dark-section h2 {
+      font-size: 32px;
+      line-height: 33px;
+      color: white;
+      margin-bottom: 2rem;
+    }
+    
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      background-color: white;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+    
+    .comparison-table th,
+    .comparison-table td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    
+    .comparison-table th {
+      background-color: #f6f7f9;
       font-weight: 600;
-      margin-bottom: 0.5rem;
+      color: #050530;
+      font-size: 14px;
+    }
+    
+    .comparison-table td {
+      font-size: 14px;
+      color: #4a5568;
+    }
+    
+    .comparison-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Buttons */
+    .button {
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.75rem;
+      border: none;
+      font-weight: 600;
+      font-size: var(--font-body-size);
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .button.primary {
+      background-color: var(--color-blue-button);
+      color: white;
+    }
+
+    .button.primary:hover {
+      background-color: #60c1ff;
     }
 
     /* Contact Form Section */
@@ -208,260 +467,38 @@
       background-color: #60c1ff;
     }
 
-    /* Buttons */
-    .button {
-      padding: 0.75rem 1.5rem;
-      border-radius: 0.75rem;
-      border: none;
-      font-weight: 600;
-      font-size: var(--font-body-size);
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      text-decoration: none;
-      display: inline-block;
-    }
-
-    .button.primary {
-      background-color: var(--color-blue-button);
-      color: white;
-    }
-
-    .button.primary:hover {
-      background-color: #60c1ff;
-    }
-
-    .button.secondary {
-      background-color: white;
-      color: var(--color-inverse-section);
-      border: 2px solid var(--color-blue-button);
-    }
-
-    .button.secondary:hover {
-      background-color: var(--color-blue-button);
-      color: white;
-    }
-
-    /* Hero Section Layout - Similar to index.html but reversed */
-    .hero-virtual {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      padding: 4rem 2rem;
-      background-color: var(--color-hero-bg);
-    }
-
-    .hero-text-virtual {
-      max-width: 45%;
-    }
-
-    .hero-text-virtual h1 {
-      font-size: var(--font-h1-size);
-      line-height: var(--font-h1-line);
-      font-weight: 700;
-      color: var(--color-inverse-section);
-      margin-bottom: 1rem;
-    }
-
-    .hero-text-virtual p {
-      font-size: var(--font-body-size);
-      line-height: var(--font-body-line);
-      color: var(--color-text-secondary);
-      margin-bottom: 2rem;
-    }
-
-    .image-grid-virtual {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
-      max-width: 50%;
-    }
-
-    .image-grid-virtual img {
-      width: 100%;
-      height: auto;
-      border-radius: 1rem;
-      object-fit: cover;
-    }
-
-    .image-grid-virtual img:nth-child(1) { height: 200px; }
-    .image-grid-virtual img:nth-child(2) { height: 250px; }
-    .image-grid-virtual img:nth-child(3) { height: 300px; }
-    .image-grid-virtual img:nth-child(4) { height: 180px; }
-
-    .cta-buttons {
-      display: flex;
-      justify-content: flex-start;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    
-    .dark-section {
-      background-color: #050530;
-      color: white;
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-    
-    .dark-section h2 {
-      font-size: 32px;
-      line-height: 33px;
-      color: white;
-      margin-bottom: 2rem;
-    }
-    
-    .content-section {
-      background-color: #f6f7f9;
-      padding: 4rem 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    
-    .content-section h2 {
-      font-size: 32px;
-      line-height: 33px;
-      color: #050530;
-      margin-bottom: 1.5rem;
-    }
-    
-    .content-section p {
-      font-size: 16px;
-      line-height: 26px;
-      color: #4a5568;
-      margin-bottom: 1.5rem;
-    }
-    
-    .comparison-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 2rem 0;
-      background-color: white;
-      border-radius: 1rem;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    }
-    
-    .comparison-table th,
-    .comparison-table td {
-      padding: 1rem;
-      text-align: left;
-      border-bottom: 1px solid #e2e8f0;
-    }
-    
-    .comparison-table th {
-      background-color: #f6f7f9;
-      font-weight: 600;
-      color: #050530;
-      font-size: 14px;
-    }
-    
-    .comparison-table td {
-      font-size: 14px;
-      color: #4a5568;
-    }
-    
-    .comparison-table tr:last-child td {
-      border-bottom: none;
-    }
-    
-    .table-note {
-      font-size: 14px;
-      color: #666;
-      font-style: italic;
-      margin-top: 1rem;
-    }
-    
-    .next-steps-section {
-      background-color: #f6f7f9;
-      padding: 4rem 2rem;
-    }
-    
-    .next-steps-content {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    
-    .next-steps-content h2 {
-      font-size: 32px;
-      line-height: 33px;
-      color: #050530;
-      margin-bottom: 2rem;
-    }
-    
-    .next-steps-content ul {
-      list-style: none;
-      padding: 0;
-      text-align: left;
-    }
-    
-    .next-steps-content li {
-      font-size: 16px;
-      line-height: 26px;
-      margin-bottom: 1rem;
-      padding-left: 1.5rem;
-      position: relative;
-    }
-    
-    .next-steps-content li:before {
-      content: "→";
-      position: absolute;
-      left: 0;
-      color: #4bb6f4;
-      font-weight: bold;
-    }
-    
-    .faq-section {
-      background-color: #f6f7f9;
-      padding: 4rem 2rem;
-    }
-    
-    .faq-section h2 {
-      font-size: 32px;
-      line-height: 33px;
-      color: #050530;
-      margin-bottom: 2rem;
-    }
-    
-    .faq-section details {
-      margin-bottom: 1.5rem;
-    }
-    
-    .faq-section summary {
-      font-weight: 600;
-      cursor: pointer;
-      font-size: 16px;
-      padding: 0.5rem 0;
-      color: #050530;
-    }
-    
-    .faq-section details p {
-      margin-top: 0.5rem;
-      font-size: 16px;
-      line-height: 26px;
-      color: #4a5568;
-    }
-
     /* Responsive Design */
     @media (max-width: 768px) {
-      .hero-virtual {
+      .promo-container {
         flex-direction: column-reverse;
-        padding: 2rem 1rem;
+        gap: 2rem;
       }
 
-      .image-grid-virtual,
-      .hero-text-virtual {
+      .hero-images {
         max-width: 100%;
-      }
-
-      .image-grid-virtual {
         grid-template-columns: 1fr 1fr;
-        margin-bottom: 2rem;
       }
 
-      .hero-text-virtual h1 {
+      .main-offer {
         font-size: 36px;
-        line-height: 42px;
+      }
+
+      .service-title {
+        font-size: 20px;
+      }
+
+      .tagline {
+        font-size: 18px;
+      }
+
+      .hero-cta-section {
+        justify-content: center;
+      }
+
+      .hero-cta-button {
+        flex: 1;
+        min-width: 200px;
+        text-align: center;
       }
 
       .site-header {
@@ -493,30 +530,10 @@
         flex-direction: column;
         gap: 1rem;
       }
-      
-      .cta-buttons {
-        flex-direction: column;
-        align-items: center;
-      }
-      
-      .comparison-table {
-        font-size: 12px;
-      }
-      
-      .comparison-table th,
-      .comparison-table td {
-        padding: 0.5rem;
-      }
     }
 </style>
 <meta content="Top-rated virtual office and mail handling services in Hollywood, FL. Business addresses, reception, notary, phone service &amp; more." name="description"/>
 <meta content="virtual office, mail service, business address, Hollywood FL, Davie, Pembroke Pines, Fort Lauderdale, reception services, Todd Miller Realty" name="keywords"/>
-<meta content="index, follow" name="robots"/>
-<meta content="Virtual Office Services | Todd Miller Realty" property="og:title"/>
-<meta content="Professional virtual office packages in Hollywood, FL. Trusted by South Florida businesses for mail, receptionist, and workspace needs." property="og:description"/>
-<meta content="website" property="og:type"/>
-<meta content="https://toddmillerrealty.com/virtual-office.html" property="og:url"/>
-<meta content="https://toddmillerrealty.com/images/virtual-office-preview.jpg" property="og:image"/>
 </head>
 <body>
 <header class="site-header">
@@ -536,21 +553,37 @@
 </nav>
 </header>
 
-<section class="hero-virtual">
-<div class="hero-text-virtual">
-<h1>Virtual Office Services</h1>
-<p>
-At <strong>Todd Miller Realty</strong>, we provide <strong>comprehensive virtual office solutions</strong> designed for modern businesses. Get a prestigious business address, professional phone services, and essential office amenities without the overhead of traditional office space.
-</p>
-<div class="cta-buttons">
-<a class="button primary" href="#whats-included">View Services</a>
-<a class="button secondary" href="#get-in-touch">Contact Us</a>
+<!-- Promotional Hero Section -->
+<section class="promo-hero">
+<div class="promo-container">
+<div class="promo-content">
+<div class="compass-icon"></div>
+<div class="company-name">Todd Miller Realty</div>
+<div class="service-title">Virtual Office Services</div>
+<div class="main-offer">
+1 MONTH <span class="free-text">FREE!!</span>
+</div>
+<div class="offer-details">
+WITH INITIAL 3 MONTH SIGN-UP
+</div>
+<div class="promo-code-section">
+<div class="promo-code-label">Use Promo Code</div>
+<div class="promo-code">VIRTUAL2025</div>
+</div>
+<div class="tagline">
+"Professionalize your home office"
+</div>
+<div class="hero-cta-section">
+<a href="#whats-included" class="hero-cta-button">Get Started Now</a>
+<a href="tel:9544375001" class="hero-cta-button secondary">Call (954) 437-5001</a>
 </div>
 </div>
-<div class="image-grid-virtual">
+<div class="hero-images">
 <img alt="The Crossroads Corporate Center Sign" src="crossroads.jpg"/>
 <img alt="Professional Conference Room" src="office.jpg"/>
 <img alt="Office Building Exterior" src="7777-Davie-Rd-Ext.jpg"/>
+<img alt="Office Parking Area" src="crossroads-ext.jpg"/>
+</div>
 </div>
 </section>
 
@@ -609,64 +642,6 @@ At <strong>Todd Miller Realty</strong>, we provide <strong>comprehensive virtual
 </table>
 </section>
 
-<section class="content-section">
-<h2>Virtual Office Services Comparison</h2>
-<table class="comparison-table">
-<thead>
-<tr>
-<th>Feature</th>
-<th>Todd Miller Realty<br/>($99/mo)</th>
-<th>Typical Competitors<br/>($120–$150/mo)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Prestigious Business Address</td>
-<td>✅</td>
-<td>✅</td>
-</tr>
-<tr>
-<td>Dedicated Phone Number</td>
-<td>✅</td>
-<td>✅</td>
-</tr>
-<tr>
-<td>Live Receptionist</td>
-<td>✅</td>
-<td>✅</td>
-</tr>
-<tr>
-<td>Mail Handling &amp; Forwarding</td>
-<td>✅</td>
-<td>✅</td>
-</tr>
-<tr>
-<td>Conference Room Access</td>
-<td>✅</td>
-<td>✅ (limited or extra fee)</td>
-</tr>
-<tr>
-<td>Copier / Fax Services</td>
-<td>✅</td>
-<td>❌</td>
-</tr>
-<tr>
-<td>Notary Services</td>
-<td>✅</td>
-<td>❌</td>
-</tr>
-<tr>
-<td>Secretarial Support</td>
-<td>✅</td>
-<td>❌</td>
-</tr>
-</tbody>
-</table>
-<p class="table-note">
-*Comparison based on publicly available data from South Florida providers as of June 2025. Prices and services subject to change. Please verify with each provider.
-</p>
-</section>
-
 <section class="dark-section">
 <h2>✅ Ready to Get Started?</h2>
 <p>Contact us today to learn how our virtual office services can support your business growth.</p>
@@ -674,30 +649,6 @@ At <strong>Todd Miller Realty</strong>, we provide <strong>comprehensive virtual
 <div style="margin-top: 2rem;">
 <a class="button primary" href="#get-in-touch">Get Started</a>
 </div>
-</section>
-
-<section class="faq-section" id="faq">
-<h2>Frequently Asked Questions</h2>
-<details>
-<summary>Can I use this address to register my LLC or corporation?</summary>
-<p>Yes. Our address is a commercial street address that meets Florida state requirements for LLC or business registration. You can also use it on your business license, IRS forms, and bank accounts.</p>
-</details>
-<details>
-<summary>Is this a real physical address or a P.O. Box?</summary>
-<p>Our address is a real commercial location — not a P.O. Box or UPS Store. You can receive mail and packages from all carriers, and use it for Google Business Profile verification.</p>
-</details>
-<details>
-<summary>How does mail handling work?</summary>
-<p>We receive your business mail at our office and hold it securely. We notify you when mail arrives and you can either: pick it up in person or request forwarding or scanning (optional add-on).</p>
-</details>
-<details>
-<summary>How fast can I get started?</summary>
-<p>You can sign up online in minutes. We'll verify your ID, complete the USPS Form 1583, and activate your address the same day in most cases.</p>
-</details>
-<details>
-<summary>What's the difference between you and national chains like Regus or iPostal1?</summary>
-<p>We're a local service, not a big chain. That means: flat, transparent pricing with no hidden fees, personal support from real people in Cooper City, a real office location, and same-day activation—no long-term contracts.</p>
-</details>
 </section>
 
 <section class="contact-section" id="get-in-touch">
