@@ -234,20 +234,45 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       margin-bottom: 1.5rem;
     }
 
+    /* Button Container */
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
     .form-card a {
       display: inline-block;
-      background-color: var(--color-blue-button);
-      color: white;
       padding: 0.75rem 1.5rem;
       text-decoration: none;
       border-radius: 6px;
       font-weight: 600;
-      transition: background-color 0.3s ease;
+      transition: all 0.3s ease;
       font-size: var(--font-body-size);
+      text-align: center;
+      cursor: pointer;
     }
 
-    .form-card a:hover {
+    /* Primary button (Download) */
+    .btn-download {
+      background-color: var(--color-blue-button);
+      color: white;
+    }
+
+    .btn-download:hover {
       background-color: #60c1ff;
+    }
+
+    /* Secondary button (Fill out online) */
+    .btn-online {
+      background-color: transparent;
+      color: var(--color-blue-button);
+      border: 2px solid var(--color-blue-button);
+    }
+
+    .btn-online:hover {
+      background-color: var(--color-blue-button);
+      color: white;
     }
 
     /* Responsive Design */
@@ -299,6 +324,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .forms-section {
         padding: 2rem 1rem;
       }
+
+      .button-container {
+        gap: 0.5rem;
+      }
+
+      .form-card a {
+        padding: 0.6rem 1.2rem;
+        font-size: 14px;
+      }
     }
 </style>
 <meta content="Download forms for Todd Miller Realty services including residency applications, commercial applications, virtual office sign-up, and conference room rentals." name="description"/>
@@ -334,7 +368,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <section class="page-header">
 <h1>Forms & Applications</h1>
-<p>Download the forms you need for our real estate and office services. All forms are available in PDF format for easy viewing and printing.</p>
+<p>Download the forms you need for our real estate and office services. All forms are available in PDF format for easy viewing and printing, or fill them out online using our convenient web forms.</p>
 </section>
 
 <section class="forms-section">
@@ -344,16 +378,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="icon">🏠</div>
 <h3>Residency Application</h3>
 <p>Complete application form for residential property rentals and leasing services.</p>
-<a href="Residency-Application.pdf" target="_blank">View & Download Form</a>
-</div>
-
-<div class="form-card">
-<div class="icon">🏢</div>
-<h3>Commercial Application</h3>
-<p>Application form for commercial property leasing and business space rentals.</p>
-
-    <a
-      href="javascript:void(
+<div class="button-container">
+<a href="Residency-Application.pdf" target="_blank" class="btn-download">View & Download Form</a>
+<a href="javascript:void(
         window.open(
           'https://form.jotform.com/251954411791157',
           'blank',
@@ -362,46 +389,88 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           width=700,
           height=500'
         )
-      )
-    ">
-     View & Download Form
-    </a>
-<! -- 
-<a href="Commercial-Application.pdf" target="_blank"></a>
+      )" class="btn-online">Fill Out Online Form</a>
+</div>
+</div>
+
+<div class="form-card">
+<div class="icon">🏢</div>
+<h3>Commercial Application</h3>
+<p>Application form for commercial property leasing and business space rentals.</p>
+<div class="button-container">
+<a href="App-for-Credit-Background-Check.pdf" target="_blank" class="btn-download">View & Download Form</a>
+<a href="javascript:void(
+        window.open(
+          'https://form.jotform.com/251963543587166',
+          'blank',
+          'scrollbars=yes,
+          toolbar=no,
+          width=700,
+          height=500'
+        )
+      )" class="btn-online">Fill Out Online Form</a>
+</div>
 </div>
 
 <div class="form-card">
 <div class="icon">📧</div>
 <h3>Virtual Office Sign Up</h3>
 <p>Registration form for virtual office services including business addresses and mail handling.</p>
-<a href="Virtual-Office-Signup-Package.pdf" target="_blank">View & Download Form</a>
+<div class="button-container">
+<a href="Virtual-Office-Signup-Package.pdf" target="_blank" class="btn-download">View & Download Form</a>
+<a href="javascript:void(
+        window.open(
+          'https://form.jotform.com/251964170018152',
+          'blank',
+          'scrollbars=yes,
+          toolbar=no,
+          width=700,
+          height=500'
+        )
+      )" class="btn-online">Fill Out Online Form</a>
+</div>
 </div>
 
 <div class="form-card">
 <div class="icon">📮</div>
 <h3>Mail Service Sign Up</h3>
 <p>Complete package for mail service registration and forwarding setup.</p>
-<a href="Mail-Service-Signup-Package.pdf" target="_blank">View & Download Form</a>
+<div class="button-container">
+<a href="Mail-Service-Signup-Package.pdf" target="_blank" class="btn-download">View & Download Form</a>
+<a href="javascript:void(
+        window.open(
+          'https://form.jotform.com/251964170018152',
+          'blank',
+          'scrollbars=yes,
+          toolbar=no,
+          width=700,
+          height=500'
+        )
+      )" class="btn-online">Fill Out Online Form</a>
+</div>
 </div>
 
 <div class="form-card">
 <div class="icon">🏛️</div>
 <h3>Conference Room Rental</h3>
 <p>Rental agreement and booking form for conference room and meeting space usage.</p>
-<a href="Conference-Room-Rental-Form.pdf" target="_blank">View & Download Form</a>
+<div class="button-container">
+<a href="Conference-Room-Rental-Form.pdf" target="_blank" class="btn-download">View & Download Form</a>
+<a href="javascript:void(
+        window.open(
+          'https://form.jotform.com/251963695435166',
+          'blank',
+          'scrollbars=yes,
+          toolbar=no,
+          width=700,
+          height=500'
+        )
+      )" class="btn-online">Fill Out Online Form</a>
 </div>
-
-<div class="form-card">
-<div class="icon">📧</div>
-<h3>Backgound Check</h3>
-<p>Background check form.</p>
-<a href="App-for-Credit-Background-Check.pdf" target="_blank">View & Download Form</a>
 </div>
 </div>
 </div>
 </section>
-
-
 
 <footer class="site-footer">
 <div class="footer-container">
